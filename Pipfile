@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[requires]
+python_version = "3.7"
+
+[packages]
+
+[dev-packages]
+pyuavcan = {path = ".", extras = ["cli", "transport_can_pythoncan", "transport_serial"], editable = true}
+pytest = "~=5.4"
+pytest-asyncio = "<2.0,>=0.10"
+coverage = "~=5.0"
+mypy = ">=0.761,<2.0"
+pycodestyle = "~=2.5"
+pylint = "~=2.3"
+sphinx-rtd-theme = "==0.4.3"
+sphinxemoji = ">=0.1.4"
+sphinx-computron = ">=0.1.0"
+twine = "~=1.13"
+Sphinx = "==2.3.1"
+
+[scripts]
+test = "sh ./test.sh"
+quicktest = "pytest pyuavcan/dsdl/_builtin_form.py -p no:logging"
